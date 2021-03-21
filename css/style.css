@@ -116,3 +116,59 @@ header h1 {
 .grabbing .slide img {
   transform: scale(0.9);
 }
+
+/* cupertino-pane */
+.cupertino-pane {
+  padding: 1.5rem 1rem;
+}
+
+.cupertino-pane .comments {
+  display: flex;
+  margin-top: 0.67rem;
+  align-items: center;
+}
+
+.cupertino-pane .delivery {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.cupertino-pane .comments i,
+.cupertino-pane .delivery i {
+  color: #444;
+  margin-right: 10px;
+}
+
+.cupertino-pane .comments a,
+.cupertino-pane .delivery p {
+  color: #444;
+  text-decoration: underline;
+}
+
+.cupertino-pane .delivery p {
+  line-height: 1;
+}
+
+.cupertino-pane .delivery span {
+  line-height: 1;
+  margin-right: 10px;
+}
+
+.cupertino-pane .buy {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cupertino-pane .buy .btn {
+  padding: 1rem 2.5rem;
+}
+
+.cupertino-pane .buy p {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgb(126, 125, 125);
+  margin-top: 0.67rem;
+}

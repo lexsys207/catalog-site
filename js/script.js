@@ -29,12 +29,12 @@ slides.forEach((slide, index) => {
   slide.addEventListener("mousemove", touchMove);
 });
 
-// Disable context menu
-window.oncontextmenu = function(event) {
-  event.preventDefault();
-  event.stopPropagation();
-  return false;
-};
+// // Disable context menu
+// window.oncontextmenu = function(event) {
+//   event.preventDefault();
+//   event.stopPropagation();
+//   return false;
+// };
 
 function touchStart(index) {
   return function(event) {
@@ -94,4 +94,29 @@ function setPositionByIndex() {
   currentTranslate = currentIndex * -window.innerWidth;
   prevTranslate = currentTranslate;
   setSliderPosition();
+}
+
+const btns = document.querySelectorAll(".btn"),
+  pane = document.querySelector(".pane"),
+  cupertino_pane = document.querySelector(".cupertino-pane");
+
+btns.forEach(btn => {
+  btn.onclick = function() {
+    renderPane();
+  };
+});
+
+function renderPane() {
+  var myPane = new CupertinoPane(
+    ".cupertino-pane", // Pane container selector
+    {
+      parentElement: "body", // Parent container
+      breaks: {
+        middle: { enabled: true, height: 300, bounce: true },
+        bottom: { enabled: true, height: 80 }
+      },
+      onDrag: () => console.log("Drag event")
+    }
+  );
+  myPane.present({ animate: true });
 }
