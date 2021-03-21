@@ -97,8 +97,11 @@ function setBackground() {
 
   if (currentIndex == 0) {
     backProduct.style.height = "100%";
+    backProduct.style = "clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)";
   } else {
-    backProduct.style.height = "50%";
+    backProduct.style.height = "";
+    backProduct.style =
+      "clip-path:polygon(0 0, 100% 0%, 100% 71%, 0% 100%);height: 50%;";
   }
 }
 
