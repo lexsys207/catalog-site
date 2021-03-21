@@ -62,7 +62,7 @@ function touchEnd() {
   if (currentIndex == 0) {
     backProduct.style.height = "100%";
   } else {
-    backProduct.style.height = "300px";
+    backProduct.style.height = "50%";
   }
 
   setPositionByIndex();
