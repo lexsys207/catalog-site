@@ -52,18 +52,13 @@ function touchEnd() {
   isDragging = false;
   cancelAnimationFrame(animationID);
 
-  const movedBy = currentTranslate - prevTranslate,
-    backProduct = document.querySelector(".background-product");
+  const movedBy = currentTranslate - prevTranslate;
 
   if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1;
 
   if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
 
-  if (currentIndex == 0) {
-    backProduct.style.height = "100%";
-  } else {
-    backProduct.style.height = "50%";
-  }
+  setBackground();
 
   setPositionByIndex();
 
@@ -96,6 +91,40 @@ function setPositionByIndex() {
   setSliderPosition();
 }
 
+// Set background
+function setBackground() {
+  backProduct = document.querySelector(".background-product");
+
+  if (currentIndex == 0) {
+    backProduct.style.height = "100%";
+  } else {
+    backProduct.style.height = "50%";
+  }
+}
+
+// Move to home
+const toHome = document.querySelector("header>h3");
+
+toHome.onclick = function() {
+  slider.style.transform = `translateX(0px)`;
+  currentIndex = 0;
+  console.log(currentIndex);
+  setBackground();
+};
+
+// Info in panel
+const cupertino_panel = document.querySelector(".cupertino-pane>h1");
+
+function infoPanel() {
+  if (currentIndex == 1) {
+    cupertino_panel.innerHTML = "Headphones";
+  } else if (currentIndex == 2) {
+    cupertino_panel.innerHTML = "Headphones";
+  } else if (currentIndex == 3) {
+    cupertino_panel.innerHTML = "LG V-series";
+  }
+}
+
 const btns = document.querySelectorAll(".btn"),
   pane = document.querySelector(".pane"),
   cupertino_pane = document.querySelector(".cupertino-pane");
@@ -119,4 +148,5 @@ function renderPane() {
     }
   );
   myPane.present({ animate: true });
+  infoPanel();
 }

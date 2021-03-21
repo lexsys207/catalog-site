@@ -185,11 +185,16 @@ header h3 {
 
 /* Animation */
 .animate-place {
-  margin-top: 1rem;
+  margin-top: 10rem;
 }
 .animate-place i {
   color: #fff;
   font-size: 2rem;
+}
+.animate-place p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.845);
+  text-transform: uppercase;
 }
 .animate-place i {
   position: relative;
