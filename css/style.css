@@ -241,18 +241,20 @@ header label.active input {
   z-index: 1;
   /* clip-path: polygon(0 0, 32% 0, 32% 0, 0 19%); */
   /* clip-path: circle(0% at 1% 1%); */
-  clip-path: circle(0% at 50% 0%);
+  /* clip-path: circle(0% at 50% 0%); */
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   /* opacity: 0; */
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 .modal.active {
   display: block;
   /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
   /* clip-path: circle(139.4% at 1% 1%); */
-  clip-path: circle(151% at 50% 0%);
+  /* clip-path: circle(151% at 50% 0%); */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 138%);
   /* opacity: 1; */
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 .modal .modal-header {
