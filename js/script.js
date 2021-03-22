@@ -128,6 +128,27 @@ function infoPanel() {
   }
 }
 
+// Serch panel
+const search = document.querySelector("header>.fa-search"),
+  searchModal = document.querySelector(".modal-search"),
+  closeModal = document.querySelector(".fa-times");
+
+closeModal.onclick = function() {
+  toActive();
+  let timeId = setTimeout(modalNone, 600);
+  function modalNone() {
+    searchModal.style.display = "none";
+  }
+};
+search.onclick = function() {
+  searchModal.style.display = "block";
+  let timerId = setTimeout(toActive, 50);
+};
+
+function toActive() {
+  searchModal.classList.toggle("active");
+}
+
 const btns = document.querySelectorAll(".btn"),
   pane = document.querySelector(".pane"),
   cupertino_pane = document.querySelector(".cupertino-pane");
