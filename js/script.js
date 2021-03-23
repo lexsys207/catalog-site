@@ -130,23 +130,47 @@ function infoPanel() {
 
 // Serch panel
 const search = document.querySelector("header>.fa-search"),
+  menu = document.querySelector("header>.fa-bars"),
   searchModal = document.querySelector(".modal-search"),
-  closeModal = document.querySelector(".fa-times");
+  closeModal = document.querySelectorAll(".fa-times"),
+  menuModal = document.querySelector(".modal-menu"),
+  modal = document.querySelectorAll(".modal");
 
-closeModal.onclick = function() {
-  toActive();
-  let timeId = setTimeout(modalNone, 600);
-  function modalNone() {
-    searchModal.style.display = "none";
-  }
-};
+////// Close Modal
+closeModal.forEach(close => {
+  close.onclick = function() {
+    toActive();
+    let timeId = setTimeout(modalNone, 600);
+    function modalNone() {
+      searchModal.style.display = "none";
+    }
+  };
+});
+
+///// Open Modal
 search.onclick = function() {
   searchModal.style.display = "block";
   let timerId = setTimeout(toActive, 50);
 };
 
+menu.onclick = function() {
+  menuModal.style.display = "block";
+  let timerId = setTimeout(toActive, 50);
+};
+
+menu.onclick = function() {
+  menuModal.style.display = "block";
+  let timerId = setTimeout(toActive, 50);
+};
+
 function toActive() {
-  searchModal.classList.toggle("active");
+  if (searchModal.style.display == "block") {
+    searchModal.classList.toggle("active");
+    console.log("search");
+  } else if (menuModal.style.display == "block") {
+    menuModal.classList.toggle("active");
+    console.log("menu");
+  }
 }
 
 const btns = document.querySelectorAll(".btn"),
